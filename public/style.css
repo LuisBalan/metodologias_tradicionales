@@ -1,0 +1,225 @@
+:root {
+  --bg: #eef2ff;
+  --card: #ffffff;
+  --accent: #4f46e5;
+  --accent-dark: #3730a3;
+  --text: #1f2937;
+  --border: #d1d5db;
+  --muted: #6b7280;
+  --surface: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+header p {
+  margin: 10px auto 0;
+  color: var(--muted);
+  max-width: 580px;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.login-card,
+.form-card,
+.list-card {
+  padding: 28px;
+}
+
+.login-card {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.menu-header,
+.action-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.menu-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  border-radius: 18px;
+  background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 40%), var(--card);
+  border: 1px solid rgba(79, 70, 229, 0.15);
+  color: var(--accent-dark);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(79, 70, 229, 0.12);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1px solid var(--border);
+}
+
+.secondary:hover {
+  background: #eef2ff;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.list-panel {
+  margin-top: 12px;
+}
+
+.list-panel h3 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: var(--surface);
+}
+
+li span {
+  display: block;
+  max-width: 72%;
+}
+
+li small {
+  display: block;
+  color: var(--muted);
+}
+
+li button {
+  width: auto;
+  min-width: 90px;
+}
+
+.loan-info {
+  display: grid;
+  gap: 6px;
+}
+
+.loan-status {
+  margin-top: 4px;
+  font-size: 0.94rem;
+}
+
+.small-text {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.action-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+@media (max-width: 760px) {
+  .action-grid,
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}

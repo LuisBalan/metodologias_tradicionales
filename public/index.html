@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibliotech Network</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Biblioteca JS</h1>
+      <p id="subheader">Inicia sesión para acceder al panel de administración.</p>
+    </header>
+
+    <main>
+      <section id="login-screen" class="screen active">
+        <div class="card login-card">
+          <h2>Bienvenido</h2>
+          <p>Ingresa tu nombre para continuar.</p>
+          <form id="login-form">
+            <input type="text" id="login-name" placeholder="Nombre de usuario" required />
+            <button type="submit">Entrar</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="menu-screen" class="screen">
+        <div class="menu-header">
+          <div>
+            <h2>Panel principal</h2>
+            <p>Elige una acción para continuar.</p>
+          </div>
+          <button id="logout-button" class="secondary">Cerrar sesión</button>
+        </div>
+
+        <div class="menu-grid">
+          <button class="option-card" data-action="user">Agregar usuario</button>
+          <button class="option-card" data-action="title">Agregar título</button>
+          <button class="option-card" data-action="copy">Agregar ejemplar</button>
+          <button class="option-card" data-action="loan">Realizar préstamo</button>
+        </div>
+      </section>
+
+      <section id="action-screen" class="screen">
+        <div class="action-header">
+          <button id="back-button" class="secondary">← Volver</button>
+          <div>
+            <h2 id="action-title"></h2>
+            <p id="action-description"></p>
+          </div>
+        </div>
+
+        <div class="action-grid">
+          <div class="card form-card">
+            <div id="user-form-panel" class="form-panel hidden">
+              <h3>Agregar usuario</h3>
+              <form id="user-form">
+                <input type="text" id="user-name" placeholder="Nombre del usuario" required />
+                <button type="submit">Agregar usuario</button>
+              </form>
+            </div>
+
+            <div id="title-form-panel" class="form-panel hidden">
+              <h3>Agregar título</h3>
+              <form id="title-form">
+                <input type="text" id="book-title" placeholder="Título" required />
+                <input type="text" id="book-author" placeholder="Autor" required />
+                <button type="submit">Agregar título</button>
+              </form>
+            </div>
+
+            <div id="copy-form-panel" class="form-panel hidden">
+              <h3>Agregar ejemplar</h3>
+              <p class="small-text">Puedes registrar otro ejemplar de un libro existente o uno nuevo.</p>
+              <form id="copy-form">
+                <input type="text" id="copy-title" placeholder="Título del ejemplar" required />
+                <input type="text" id="copy-author" placeholder="Autor" required />
+                <button type="submit">Agregar ejemplar</button>
+              </form>
+            </div>
+
+            <div id="loan-form-panel" class="form-panel hidden">
+              <h3>Realizar préstamo</h3>
+              <form id="loan-form">
+                <select id="loan-user" required></select>
+                <select id="loan-book" required></select>
+                <input type="date" id="loan-salida" required />
+                <input type="date" id="loan-due" required />
+                <button type="submit">Registrar préstamo</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="card list-card">
+            <div id="user-list-panel" class="list-panel hidden">
+              <h3>Usuarios registrados</h3>
+              <ul id="user-list"></ul>
+            </div>
+
+            <div id="book-list-panel" class="list-panel hidden">
+              <h3>Libros registrados</h3>
+              <ul id="book-list"></ul>
+            </div>
+
+            <div id="loan-list-panel" class="list-panel hidden">
+              <h3>Préstamos</h3>
+              <ul id="loan-list"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
